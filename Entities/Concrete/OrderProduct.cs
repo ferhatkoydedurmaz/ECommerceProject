@@ -1,8 +1,4 @@
-﻿
-using Dapper.Contrib.Extensions;
-
-namespace Entities.Concrete;
-[Table("OrderProducts")]
+﻿namespace Entities.Concrete;
 public class OrderProduct
 {
     public int OrderId { get; set; }

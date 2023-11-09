@@ -5,12 +5,12 @@ using Business.Mapper.AutoMapperProfile;
 using DataAccesss.Abstract;
 using DataAccesss.Concrete;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<IDbConnection>(sql => new SqlConnection(builder.Configuration.GetConnectionString("default")));
-
+builder.Services.AddTransient<IDbConnection>(sql => new SqlConnection(builder.Configuration.GetConnectionString("DefaultConnStr")));
 // Add services to the container.
 
 var mapperConfig = new MapperConfiguration(mc =>

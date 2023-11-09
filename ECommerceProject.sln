@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34212.112
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI", "WebUI\WebUI.csproj", "{F514D7B5-B5C1-4EBF-8C78-E82F739D52CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebUI", "WebUI\WebUI.csproj", "{F514D7B5-B5C1-4EBF-8C78-E82F739D52CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccesss", "DataAccesss\DataAccesss.csproj", "{E6DBF2C6-1716-4EDA-B810-D0793E7A876E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccesss", "DataAccesss\DataAccesss.csproj", "{E6DBF2C6-1716-4EDA-B810-D0793E7A876E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{F8A65387-24FA-4DA5-A35D-671859B125CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{F8A65387-24FA-4DA5-A35D-671859B125CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{23319B53-7D3C-4080-9EBB-D03E87421B22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{23319B53-7D3C-4080-9EBB-D03E87421B22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransferBetweenTwoTable", "TransferBetweenTwoTable\TransferBetweenTwoTable.csproj", "{9BD6A6A4-81F5-4DA6-AA73-75F88318DF92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransferBetweenTwoTable", "TransferBetweenTwoTable\TransferBetweenTwoTable.csproj", "{9BD6A6A4-81F5-4DA6-AA73-75F88318DF92}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{127DFBEF-10C5-4F51-A42C-A7B349F295A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrdersAPI", "OrdersAPI\OrdersAPI.csproj", "{64A6A8F9-B8BC-49CA-B24B-662F8CED9322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{127DFBEF-10C5-4F51-A42C-A7B349F295A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{127DFBEF-10C5-4F51-A42C-A7B349F295A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{127DFBEF-10C5-4F51-A42C-A7B349F295A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64A6A8F9-B8BC-49CA-B24B-662F8CED9322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64A6A8F9-B8BC-49CA-B24B-662F8CED9322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64A6A8F9-B8BC-49CA-B24B-662F8CED9322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64A6A8F9-B8BC-49CA-B24B-662F8CED9322}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

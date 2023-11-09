@@ -4,7 +4,7 @@ using System.Data;
 using TransferBetweenTwoTable.Models;
 
 
-string connectionString = "Server=(localdb)\\mssqllocaldb;Database=ECommerceAppDB;Trusted_Connection=True;MultipleActiveResultSets=true";
+string connectionString = "Server=localhost;Database=ShopiVerseAppDB;TrustServerCertificate=True;Trusted_Connection=True;";
 
 using (SqlConnection dbConnection = new(connectionString))
 
@@ -13,20 +13,16 @@ using (SqlConnection dbConnection = new(connectionString))
         if (dbConnection.State == ConnectionState.Closed)
             dbConnection.Open();
 
-        List<BTable> bTables = new();
-
-        var aTables = dbConnection.Query<ATable>("SELECT * FROM ATables");
-
-        var addBTables = dbConnection.Execute(sql: "INSERT INTO BTables (Id, Test1, Test2, Test3) VALUES (@Id, @Test1, @Test2, @Test3)", param: bTables, commandType: CommandType.Text);
-
+        string query = "INSERT INTO BTables (Test1, Test2, Test3) SELECT Test1, Test2, Test3 FROM ATables";
+        var addBTables = dbConnection.Execute(query);
         if (addBTables < 0)
             Console.WriteLine("Failed to add");
 
         Console.WriteLine("Successfully added");
     }
-    catch (Exception ex)
+    catch
     {
-        Console.WriteLine("Bağlantı hatası: " + ex.Message);
+        Console.WriteLine("An error occurred while adding");
     }
     finally
     {

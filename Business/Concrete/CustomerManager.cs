@@ -4,6 +4,7 @@ using DataAccesss.Abstract;
 using Entities.Concrete;
 using Entities.Dto;
 using Shared.Results;
+using Shared.Utitilies.Security.Hashing;
 
 namespace Business.Concrete;
 public class CustomerManager : ICustomerService
@@ -21,7 +22,12 @@ public class CustomerManager : ICustomerService
     {
         try
         {
+            HashingHelper.CreatePasswordHash(model.Password, out var passwordHash, out var passwordSalt);
+
             var entity = _mapper.Map<Customer>(model);
+
+            entity.PasswordHash = passwordHash;
+            entity.PasswordSalt = passwordSalt;
 
             var result = await _customerDal.AddCustomerAsync(entity);
 
@@ -41,7 +47,7 @@ public class CustomerManager : ICustomerService
 
             return new BaseDataResponse<IEnumerable<CustomerDto>>(result, true);
         }
-        catch(Exception ex)
+        catch
         {
             return new BaseDataResponse<IEnumerable<CustomerDto>>(Enumerable.Empty<CustomerDto>(), false, "An error occurred while getting customers.");
         }
